@@ -1,0 +1,531 @@
+/* Website created by Nadia Urooj */
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* General Styling */
+html {
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  padding-top: 10px; /* Add padding to the top of the page */
+}
+
+/* Navbar Styling */
+.bg-darkgrey {
+  background-color: #1e1e1e; /* Dark background color for the navbar */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Circular border for the logo image */
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px; 
+  color: #fff; /* White color for the logo text */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5%; /* Add padding to the top of the navbar */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+.navbar-nav .nav-item .nav-link {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+
+
+.menu-btn {
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none; /* Initially hide the menu button */
+}
+
+.navbar-toggler {
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-toggler:focus {
+  outline: none; /* Remove focus outline from navbar toggler */
+}
+/* First Page Styling */
+.firstpage {
+  background-image: url(img/background.png); /* Set background image */
+  background-size: cover; /* Ensure the background image covers the entire screen */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  max-width: 100%;
+}
+
+.home {
+  color: #fff; /* White color for text */
+  margin: 3rem auto; /* Center the text horizontally */
+}
+
+.text {
+  font-size: 65px; /* Large font size for main text */
+}
+
+/* Text Colors */
+.text-pink {
+  color: #ff79c6; /* Pink text color */
+}
+
+.text-blue {
+  color: #6273a5; /* Blue text color */
+}
+
+.text-purple {
+  color: #bd93f9; /* Purple text color */
+}
+
+/* Buttons Styling */
+.btn-purple {
+  background-color: #bd93f9; /* Purple background color */
+  color: #333; /* Dark text color */
+  border: 2px solid #333; /* Dark border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 5px 30px; /* Padding */
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.btn-purple:hover {
+  background-color: #333; /* Dark background color on hover */
+  color: #bd93f9; /* Purple text color on hover */
+  border-color: #333; /* Dark border color on hover */
+}
+
+.btn-dark {
+  background-color: #333; /* Dark background color */
+  color: #bd93f9; /* Purple text color */
+  border: 2px solid #bd93f9; /* Purple border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 5px 30px; /* Padding */
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.btn-dark:hover {
+  background-color: #bd93f9; /* Purple background color on hover */
+  color: #383838; /* Dark text color on hover */
+  border-color: #bd93f9; /* Purple border color on hover */
+}
+
+/* Vertical Line Styling */
+.vertical-line {
+  border-left: 1px solid #bd93f9; /* Purple vertical line */
+  height: 100px; /* Height of the line */
+  margin: 0 0.6rem; /* Margin around the line */
+}
+
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+  flex-direction: column; /* Arrange icons vertically */
+  margin-top: 10px; /* Add margin at the top */
+}
+
+.social-icons a {
+  margin-bottom: 10px; /* Add margin at the bottom of each icon */
+  color: #6273a5; /* Blue color for icons */
+  font-size: 20px; /* Font size of icons */
+}
+/* Project Section Styling */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Gap between grid items */
+  max-width: 100%; /* Ensure the grid doesn't exceed its container */
+  margin: auto; /* Center the grid horizontally */
+}
+
+.project-item img {
+  width: 200%; 
+  height: 250px; 
+  max-width: 100%; 
+  display: block; 
+  object-fit: cover;
+}
+.project-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px; 
+}
+
+.project-item img {
+  width: 120%; 
+  border-radius: 20px; 
+  transition: transform 0.3s ease; 
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth transition */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px; /* Padding for overlay content */
+}
+
+.project-overlay h3,
+.project-overlay p,
+.project-overlay .read-more {
+  color: #fff; /* White text color */
+  margin: 5px 0; /* Margin for overlay content */
+}
+
+.project-item:hover img {
+  transform: scale(1.1); /* Enlarge the image on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+  filter: blur(2px); /* Apply blur effect on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.project-item:hover .project-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* About Section Styling */
+.about-me {
+  margin-top: 14rem; /* Margin from the top */
+  margin-bottom: auto; /* Automatically adjust margin at the bottom */
+}
+
+.about-me img {
+  height: 300px; /* Fixed height for the image */
+  border: 10px solid rgba(189, 147, 249, 0); /* Thick transparent border */
+  padding: 10px; /* Space between image and border */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 0 0 1px #6273a5; /* Thin border inside the space */
+}
+
+/* Service Section Styling */
+.Services {
+  padding-top: 10rem; /* Padding from the top */
+}
+
+.services-grid {
+  margin-top: 3rem; /* Margin from the top */
+  margin-bottom: 10%; /* Margin from the bottom */
+  display: flex;
+  justify-content: space-between; /* Evenly space service items */
+  gap: 20px; /* Gap between service items */
+}
+
+.service {
+  flex: 1; /* Equal width for each service item */
+  padding: 20px; /* Padding for each service item */
+  border: 1px solid #34394c; /* Border */
+  border-radius: 20px; /* Rounded corners */
+  text-align: center; /* Center-align text */
+  transition: transform 0.3s ease; /* Smooth transition */
+  background-color: #34394c; /* Background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+}
+
+.service i {
+  font-size: 5rem; /* Font size for service icons */
+  margin-bottom: 10px; /* Margin at the bottom of icons */
+}
+
+.service h3 {
+  margin-top: 15px; /* Margin at the top of service titles */
+  font-size: 20px; /* Font size for service titles */
+  margin-bottom: 10px; /* Margin at the bottom of service titles */
+}
+
+.service p {
+  font-size: 16px; /* Font size for service descriptions */
+}
+
+.service:hover {
+  transform: translateY(-5px); /* Move service item up on hover */
+}
+
+/* Footer Styling */
+.horizontal-line {
+  border-bottom: 1px solid #6273a5; /* Horizontal line color */
+  margin-top: 50px; /* Margin from the top */
+}
+
+.footer {
+  text-align: center; /* Center-align text */
+  margin-top: 20px; /* Margin from the top */
+  color: #fff; /* White text color */
+}
+
+
+/* Scroll Up Button Container */
+#scroll-up-container {
+  position: relative; /* Positioning context for the scroll-up button */
+}
+
+/* Scroll Up Button Styling */
+.scroll-up-btn {
+  position: absolute; /* Positioning the button */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  width: 40px; /* Width of the button */
+  height: 40px; /* Height of the button */
+  background-color: #b19cd9; /* Button background color */
+  border-radius: 50%; /* Rounded shape */
+  display: flex; /* Flex layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.scroll-up-btn:hover {
+  background-color: #9379a9; /* Button background color on hover */
+}
+
+.scroll-up-btn i {
+  color: #333; /* Icon color */
+}
+
+/* Custom Scroll Bar Styling */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the thumb on hover */
+}
+
+/* Media Queries for Responsive Design */
+
+/* Navbar Section */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: column; /* Arrange navbar items vertically */
+  }
+
+  .navbar-nav .nav-item {
+    margin-top: 10px; /* Add space between navbar items */
+  }
+}
+
+/* Home Section */
+@media screen and (max-width: 768px) {
+  .firstpage {
+    background-size: 600px; /* Adjust background size */
+    background-position: top; /* Align background image to the top */
+  }
+
+  .text-pink {
+    font-size: 40px; /* Adjust font size */
+  }
+}
+
+/* Buttons in Home Section */
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 40px; /* Adjust font size */
+  }
+
+  .btn-purple,
+  .btn-dark {
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 14px; /* Adjust button font size */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .text {
+    font-size: 50px; /* Adjust font size */
+  }
+
+  .btn-purple,
+  .btn-dark {
+    padding: 12px 25px; /* Adjust button padding */
+    font-size: 16px; /* Adjust button font size */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .text {
+    font-size: 65px; /* Adjust font size */
+  }
+
+  .btn-purple,
+  .btn-dark {
+    padding: 15px 30px; /* Adjust button padding */
+    font-size: 18px; /* Adjust button font size */
+  }
+}
+
+/* Project Section */
+@media screen and (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust card size */
+    gap: 10px; /* Adjust gap between cards */
+  }
+
+  .project-item {
+    max-width: 100%; /* Maximum width for project item */
+    margin-bottom: 20px; /* Margin between project items */
+  }
+
+  .btn-purple,
+  .btn-dark {
+    padding: 5px 15px; /* Adjust button padding */
+    font-size: 14px; /* Adjust button font size */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust card size */
+    gap: 10px; /* Adjust gap between cards */
+  }
+
+  .project-item {
+    max-width: 100%; /* Maximum width for project item */
+    margin-bottom: 20px; /* Margin between project items */
+  }
+
+  .btn-purple,
+  .btn-dark {
+    padding: 5px 15px; /* Adjust button padding */
+    font-size: 14px; /* Adjust button font size */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Adjust number of columns */
+    gap: 20px; /* Adjust gap between cards */
+  }
+
+  .btn-purple,
+  .btn-dark {
+    padding: 8px 30px; /* Adjust button padding */
+    font-size: 16px; /* Adjust button font size */
+  }
+}
+
+/* About Section */
+@media screen and (max-width: 768px) {
+  .about-content .row {
+    flex-direction: column; /* Arrange content in column */
+    align-items: center; /* Center align items */
+  }
+
+  .about-content .col-md-6 {
+    width: 80%; /* Set width */
+    margin-bottom: 20px; /* Add margin bottom */
+    text-align: center; /* Center align text */
+  }
+
+  .about-content .col-md-6 img {
+    max-width: 100%; /* Set max width for image */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add margin bottom */
+  }
+
+  .about-content .btn-purple {
+    padding: 5px 15px; /* Adjust button padding */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .about-content .btn-purple {
+    padding: 5px 15px; /* Adjust button padding */
+  }
+
+  .about-content .col-md-6 {
+    width: 80%; /* Set width */
+    margin-bottom: 20px; /* Add margin bottom */
+    text-align: center; /* Center align text */
+  }
+
+  .about-content .col-md-6 .items-center img {
+    height: 200px; /* Set height for image */
+    width: auto; /* Maintain aspect ratio */
+  }
+}
+
+/* Media Query for Screens Wider than 1000px */
+@media screen and (min-width: 1000px) {
+  .about-me img {
+    max-height: 250px; /* Set max height for image */
+    width: auto; /* Maintain aspect ratio */
+  }
+}
+
+/* Service Section */
+@media screen and (max-width: 768px) {
+  .services-grid {
+    flex-direction: column; /* Arrange services in column */
+    align-items: center; /* Center align items */
+  }
+
+  .service {
+    width: 80%; /* Set width */
+    margin-bottom: 20px; /* Add margin bottom */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .services-grid {
+    flex-direction: column; /* Arrange services in column */
+    align-items: center; /* Center align items */
+  }
+
+  .service {
+    width: 80%; /* Set width */
+    margin-bottom: 20px; /* Add margin bottom */
+  }
+}
